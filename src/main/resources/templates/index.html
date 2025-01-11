@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
   <meta charset="UTF-8">
@@ -10,23 +10,23 @@
 
 <body>
   <div class="container">
-    <h1>Копилка</h1>
+    <h1 class="title">Копилка</h1>
     <p>Текущая сумма: <span id="total">0.00</span> евро</p>
-    <table>
+    <table class="table">
       <thead>
         <tr>
-          <th>Номинал</th>
-          <th>Количество</th>
+          <th class="tableHead">Номинал</th>
+          <th class="tableHead">Количество</th>
         </tr>
       </thead>
       <tbody id="coin-list">
         <!-- Данные будут добавляться через JS -->
       </tbody>
     </table>
-    <button id="reset">Сбросить данные</button>
-    <button id="randomCoin">Монетка</button>
+    <button class="buttons" id="reset">Сбросить данные</button>
+    <button class="buttons" id="randomCoin">Монетка</button>
   </div>
-  <script src="script.js"></script>
+  <script defer src="script.js"></script>
 </body>
 
 </html>
