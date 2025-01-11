@@ -1,10 +1,15 @@
 const API_BASE_URL = 'http://localhost:8081';
+const totalElement = document.getElementById('total');
+const coinList = document.getElementById('coin-list');
+const resetElement = document.getElementById('reset');
 
 // Функция для обновления интерфейса
 function updateData(data) {
-    document.getElementById('total').textContent = data.total.toFixed(2);
-    const coinList = document.getElementById('coin-list');
+
+
+    totalElement.textContent = data.total.toFixed(2);
     coinList.innerHTML = ''; // Очищаем таблицу
+
     for (const [nominal, count] of Object.entries(data.coins)) {
         const row = `<tr><td>${nominal} €</td><td>${count}</td></tr>`;
         coinList.innerHTML += row;
@@ -23,16 +28,17 @@ async function loadData() {
 }
 
 // Сброс данных через API
-document.getElementById('reset').addEventListener('click', async () => {
+resetElement.addEventListener('click', async () => {
     try {
         const response = await fetch(`${API_BASE_URL}/api/coins/reset`, { method: 'POST' });
         if (response.ok) {
             alert('Данные сброшены!');
             loadData(); // Перезагрузка данных
         } else {
-            alert('Ошибка сброса данных');
+            throw new Error('Ошибка сервера');
         }
     } catch (error) {
+        alert('Произошла ошибка при сбросе данных')
         console.error('Ошибка сброса данных:', error);
     }
 });
