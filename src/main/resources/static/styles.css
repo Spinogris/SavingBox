@@ -15,23 +15,23 @@ body {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   }
   
-  h1 {
+  .title {
     text-align: center;
   }
   
-  table {
+  .table {
     width: 100%;
     border-collapse: collapse;
     margin: 20px 0;
   }
   
-  table th, table td {
+  .tableHead {
     border: 1px solid #ddd;
     padding: 10px;
     text-align: center;
   }
   
-  button {
+  .buttons {
     display: block;
     width: 100%;
     padding: 10px;
@@ -43,6 +43,6 @@ body {
     cursor: pointer;
   }
   
-  button:hover {
+  .buttons:hover {
     background-color: #0056b3;
   }
